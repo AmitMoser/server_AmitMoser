@@ -1,0 +1,158 @@
+.Container {
+    display: grid;
+    grid-template-areas: 
+    'Nav Nav Nav'
+    'Header Header Header'
+    'Main Main Main';
+}
+.FirstNav{
+    grid-area: Nav;
+    background-color: gray ;
+    animation: 3s linear 0s 1 running myOpacity;
+
+}
+@keyframes myOpacity{
+    50%{opacity: 0;}
+}
+.Main{
+    grid-area: Main;
+    text-align: center;
+}
+@media only screen and (max-width: 600px) {
+    body {background-color: lightskyblue;}
+    .Container {
+        display: grid;
+        grid-template-areas:
+        'Nav'
+        'Header'
+        'Main';
+    }
+    .FirstNav{
+        text-align: center;
+        align-items: center;
+        background-color:bisque;
+    }
+    .Buttons{
+        background-color: white;
+        color: black;
+        font-size: 15px;
+        border-radius: 12px;
+    }
+}
+.NavBar{
+    display: flex;
+    padding-right: 0px;
+    right: 0px;
+    font-size: 20px;
+    text-align: center;
+    height: 100px;
+    padding-top: 4px;
+}
+.NavList{
+list-style-type: none;
+padding-left: 0;
+}
+.NavList .listPage{
+    display: inline-block;
+    padding: 10px;
+}
+.MidP{
+text-align: center;
+}
+.MidList{
+    list-style-type: none;
+    font-size: Large;
+}
+.TopHP{
+    grid-area: Header;
+    text-align: center;
+    font-size: large;
+    color: rgb(116, 72, 8);
+    border : 2px solid black ;
+    padding: 2px; 
+    margin-top: 20px;
+}
+.FactsHP{
+    text-align: center ;
+}
+.IconsHP{
+    display: inline-block;
+    margin: 2px;
+    text-align: center;
+}
+#WantMore{
+    text-align: center;
+}
+div {
+    padding: 20px;
+}
+.Buttons{
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    font-size: 24px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+.Buttons:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+.Buttons span{
+    cursor: pointer;
+    display: inline-block;
+    position:relative;
+    transition: 0.5s;
+}
+.Buttons span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+}
+.Buttons span:after {
+    #opacity:1 ;
+    right: 0;
+}
+.Buttons:hover span {
+    padding-right: 25px;
+}
+  
+.Buttons:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+.formContact{
+    text-align: center;
+    font-size: x-large;
+    font-style: normal;
+    color: rgb(116, 72, 8);
+}
+.active .Buttons {
+    background-color: #4CAF50;
+    border: 2px solid var(--orange7);
+}
+.regBtn{
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+    background-color: white;
+    color: black;
+    font-size: 24px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.glow .Buttons #Contact-us{
+    background-color: cyan;
+}
+.ass_3{
+    border: black solid;
+    align-items: center;
+    margin-left: 200px;
+    margin-top: 20px;
+}

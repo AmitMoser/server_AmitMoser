@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Home Page{% endblock %}
+{% block titleName %}
+    <div class="TopHP">
+        <header>
+            <h1>Welcome To My First Web Page On Coffee</h1>
+        </header>
+    </div>
+{% endblock %}
+{% block tohen %}
+    <div class="Main">
+        <h2 class="FactsHP"> Few Facts About Coffee :</h2>
+        <section class="Sections">
+            <div class="IconsHP">
+                <p> <img src="../static/coffeeicon1.jpeg" style="height: 50px; width: 50px;" alt=""></p>
+            </div>
+            <div class="IconsHP">
+                <p> <img src="../static/coffeeicon2.jpeg" alt="" style="height: 50px; width: 50px;"></p>
+            </div>
+            <div class="IconsHP">
+                <p> <img src="../static/coffeeicon3.jpeg" alt="" style="height: 50px; width: 50px;"></p>
+            </div>
+        </section>
+        <ul class="MidP">
+            <li class="MidList">Brasil Grows the most coffee in the world </li>
+            <li class="MidList">Only two U.S. states produce coffee</li>
+            <li class="MidList">Espresson Means "Pressed Out" In Italian</li>
+            <li class="MidList">The world's most expensive coffee can cost more than 600$ a pound</li>
+        </ul>
+        <h2 id="WantMore">Want To learn more about coffee ??</h2>
+        <button class="regBtn" id="yesBtn" onclick= "changeText()" >Press Me!!</button>
+    </div>
+{% endblock %}

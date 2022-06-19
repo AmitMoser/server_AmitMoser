@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <script defer src="../static/Coffee.js"></script>
+    <link rel="stylesheet" href="../static/Coffee.css">
+</head>
+<div class="Container">
+    <body style="background-color: lightgrey;">
+    {% include('navBar.html') %}
+    {% block titleName %}
+    {% endblock %}
+    {% block tohen %}
+    {% endblock %}
+    {% include('footer.html') %}
+    </body>
+</div>
+</html>
