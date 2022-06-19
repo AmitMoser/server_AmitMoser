@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
 {% block title %}about page {% endblock %}
+{{ super() }}
+{% block titleName %}
+    <div class="TopHP">
+        <header>
+            <h1>Welcome To about Page</h1>
+        </header>
+    </div>
+{% endblock %}
 {% block tohen %}
-    {{ super() }}
-    <container class = "ass_3">
+        <container class = "Main" style=" border: black solid">
         <h1>Search</h1>
         <form action="/assignment3_2" method="get">
             <label for="uname">User Name:</label>

@@ -9,7 +9,7 @@
 {% endblock %}
 {% block tohen %}
     {{ super() }}
-    <container class = "ass_3">
+    <container class = "Main">
         {% for title, value in user_coffee.items() %}
             {% if value > 10  %}
                 <h3 style="text-align: center">{{ title | upper }} : {{ value }} EXPENSIVE</h3>

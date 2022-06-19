@@ -1,3 +1,6 @@
-<footer>
+<footer class="foot">
     &copy; Coffee place ltd
+    {% if session['loggedIn'] %}
+        <h3> Hello {{ session['username'] }}</h3>
+    {% endif %}
 </footer>
