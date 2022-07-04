@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+{% block title %}about page {% endblock %}
+{{ super() }}
+{% block titleName %}
+    <div class="TopHP">
+        <header>
+            <h1>Users Page</h1>
+        </header>
+    </div>
+{% endblock %}
+{% block tohen %}
+    {% if message %}
+        <h3 style="margin-bottom: 30px"> {{ message }} </h3>
+    {% endif %}
+    <container class = "Main" style=" border: black solid">
+        <div class="container">
+            <h2>Insert Form</h2>
+            <form action="/insert_user" method="post">
+                <input type="text" name="name" required placeholder="Insert Name">
+                <input type="email" name="email" required placeholder="Email">
+                <input type="submit">
+            </form>
+        </div>
+        <container>
+            <form action="/get_users" method="get">
+                <input type="submit" value="Show Users">
+            </form>
+        </container>
+        {% for user in users %}
+            <div class="container" style="border: black solid ">
+                <h3>{{ user.name }}</h3>
+                <h4>Email: {{ user.email }}</h4>
+                <form action="/delete_user" method="post">
+                    <input type="hidden" name="user_id" value="{{ user.id }}">
+                    <input type="submit" value="Delete">
+                </form>
+                <form action="/update_user" method="post" style="margin-top: 20px">
+                    <input type="text" name="name" placeholder="New Name">
+                    <input type="email" name="email" placeholder="New Email">
+                    <input type="hidden" name="user_id" value="{{ user.id }}">
+                    <input type="hidden" name="old_name" value="{{ user.name }}">
+                    <input type="hidden" name="old_email" value="{{ user.email }}">
+                    <input type="submit" value="Edit">
+                </form>
+            </div>
+        {% endfor %}
+        <div class="json">
+            <form action="/users" method="get">
+                <input type="submit" value="Jason Print">
+            </form>
+        </div>
+        <div id="frontFetch">
+            <h3> Frontend Fetch </h3>
+            <form onsubmit="hello()" >
+                <input type="number" name="id" id="front_id"required>
+                <input type="submit" value="Get" onclick="hello(); return false;" >
+            </form>
+            <span id="user_span">
+            </span>
+        </div>
+        <div id="backFetch">
+            <h3> Backend Fetch </h3>
+            <form action="/outer_source">
+                <input type="number" name="back_id" id="back_id"required>
+                <input type="submit" value="Get">
+            </form>
+            {% if users_back %}
+                <h3>{{users_back.data.first_name}} {{ users_back.data.last_name }}</h3>
+                <p>{{users_back.data.email}}</p>
+                <img src="{{users_back.data.avatar}}" alt="avatar"/>
+            {% endif %}
+        </div>
+        <div id="userFromtable">
+            <h3> Get User in Json</h3>
+            <form action="/restapi_users" style="margin-top: 20px">
+                <input type="number" name="id" required>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+    </container>
+{% endblock %}

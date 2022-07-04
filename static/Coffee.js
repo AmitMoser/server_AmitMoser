@@ -10,7 +10,7 @@ const navList = document.querySelectorAll('nav a').forEach(link => {
         link.classList.add('active');
     }
 });
-document.getElementById('myForm').addEventListener('submit',function(){alert("My Website is Thanking you!")},false) ; 
+document.getElementById('myForm').addEventListener('submit',function(){alert("My Website is Thanking you!")},false) ;
 function changeText(){
     console.log('hello')
     if(document.getElementById('yesBtn').innerHTML.includes('Press Me!!')){
@@ -20,4 +20,16 @@ function changeText(){
         document.getElementById('yesBtn').innerHTML = 'Press Me!!'
     }
 }
-
+function hello(){
+    const id = document.getElementById("front_id").value;
+    const url = `https://reqres.in/api/users/${id}`;
+    fetch(url)
+        .then(response => response.json())
+        .then(value => {
+            document.getElementById('user_span').innerHTML = `
+            <h3>${value.data["first_name"]} ${value.data["last_name"]}</h3>
+            <p>${value.data["email"]}</p>
+            <img src="${value.data["avatar"]}" alt="avatar"/>
+            `
+        })
+}
